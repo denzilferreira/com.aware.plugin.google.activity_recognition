@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.path="$MODULE_DIR$/../../aware-client/aware-core" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="com.aware.plugin.google.activity_recognition" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android-gradle" name="Android-Gradle">
+      <configuration>
+        <option name="GRADLE_PROJECT_PATH" value=":aware-core" />
+      </configuration>
+    </facet>
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="phoneDebug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assemblePhoneDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compilePhoneDebugJava" />
+        <option name="ASSEMBLE_TEST_TASK_NAME" value="assemblePhoneDebugTest" />
+        <option name="SOURCE_GEN_TASK_NAME" value="generatePhoneDebugSources" />
+        <option name="TEST_SOURCE_GEN_TASK_NAME" value="generatePhoneDebugTestSources" />
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/res" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+        <option name="LIBRARY_PROJECT" value="true" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/classes/phone/debug" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../aware-client/aware-core">
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/r/phone/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/aidl/phone/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/buildConfig/phone/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/rs/phone/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/res/rs/phone/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phoneDebug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phoneDebug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phoneDebug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phoneDebug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phoneDebug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phoneDebug/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phoneDebug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/r/test/phone/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/aidl/test/phone/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/buildConfig/test/phone/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/source/rs/test/phone/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/generated/res/rs/test/phone/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phone/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phone/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phone/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phone/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phone/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phone/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/phone/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTestPhone/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTestPhone/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTestPhone/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTestPhone/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTestPhone/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTestPhone/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTestPhone/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/debug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/debug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/debug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/debug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/debug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/debug/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/debug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/main/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTest/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTest/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTest/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTest/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTest/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTest/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/src/androidTest/rs" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/bundles" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/coverage-instrumented-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/dependency-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/dex" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/dex-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/jacoco" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/javaResources" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/libs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/lint" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/ndk" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/pre-dexed" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/proguard" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/res" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/rs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/intermediates/symbols" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../aware-client/aware-core/build/tmp" />
+    </content>
+    <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="gridlayout-v7-20.0.0" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-20.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-6.1.11" level="project" />
+    <orderEntry type="library" exported="" name="mqtt-client-0.4.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
+    <orderEntry type="library" exported="" name="zbar" level="project" />
+  </component>
+</module>
+

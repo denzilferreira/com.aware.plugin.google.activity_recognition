@@ -1,0 +1,58 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="com.aware.plugin.google.activity_recognition"
+    android:versionCode="11"
+    android:versionName="5.6" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.aware.READ_CONTEXT_DATA" />
+    <uses-permission android:name="com.aware.WRITE_CONTEXT_DATA" />
+
+    <application
+        android:icon="@drawable/ic_launcher_activity_recognition"
+        android:label="@string/app_name"
+        tools:replace="android:icon"
+        >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name="com.aware.plugin.google.activity_recognition.Algorithm"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/app_name" >
+        </service>
+
+        <activity
+            android:name="com.aware.plugin.google.activity_recognition.Settings"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:label="@string/app_name" >
+        </activity>
+
+        <provider
+            android:name="com.aware.plugin.google.activity_recognition.Google_AR_Provider"
+            android:authorities="com.aware.plugin.google.activity_recognition.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.aware.READ_CONTEXT_DATA"
+            android:writePermission="com.aware.WRITE_CONTEXT_DATA" >
+        </provider>
+
+        <service
+            android:name="com.aware.plugin.google.activity_recognition.Plugin"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/app_name" >
+        </service>
+    </application>
+
+</manifest>
