@@ -14,12 +14,6 @@
         revision="20.0.0"
         sha1="0f700f6802ba1a1f1fa7ac26d5db0666a89d75a6"/>
     <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-2197fc31e4009e36970f908c730ef9356a071ce5.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
-    <item
         dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-ee576f91b45a6538d4156fc6e674b6f65034f74e.jar"
         jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
@@ -30,7 +24,13 @@
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="48d509aab3b77d7481d8bf38b6814fc1ccb92d9d"/>
+        sha1="1bd1a0239552455451fe3e4ee2c2ddab36393694"/>
+    <item
+        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-2197fc31e4009e36970f908c730ef9356a071ce5.jar"
+        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
     <item
         dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/mqtt-client-0.4.0-e228b31b99e9321a57344b13b006ca544cc2394b.jar"
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/libs/mqtt-client-0.4.0.jar"
@@ -38,17 +38,17 @@
         revision="20.0.0"
         sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6"/>
     <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-ee85c09528ec2414ca5d919a221dcc44a9a1f997.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="6c6b497aa9e3aadbaabf975379e7914fa9e65523"/>
-    <item
         dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/zbar-2c76568b39b9196d833637cc68516a07560baad9.jar"
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/libs/zbar.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0"/>
+    <item
+        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-ee85c09528ec2414ca5d919a221dcc44a9a1f997.jar"
+        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="6c6b497aa9e3aadbaabf975379e7914fa9e65523"/>
     <item
         dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-faf95349828933c379a014c4a12e6613d4849711.jar"
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"

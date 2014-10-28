@@ -3,17 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     package="com.aware.plugin.google.activity_recognition"
-    android:versionCode="12"
-    android:versionName="5.7" >
+    android:versionCode="13"
+    android:versionName="6.0" >
 
     <uses-sdk
         android:minSdkVersion="10"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="21" />
 
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="com.aware.READ_CONTEXT_DATA" />
-    <uses-permission android:name="com.aware.WRITE_CONTEXT_DATA" />
 
     <application
         android:icon="@drawable/ic_launcher_activity_recognition"

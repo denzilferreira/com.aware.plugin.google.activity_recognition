@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.aware.plugin.google.activity_recognition"
         minSdkVersion 10
-        targetSdkVersion 19
+        targetSdkVersion 21
     }
 
     buildTypes {
@@ -20,7 +20,4 @@ android {
 
 dependencies {
     compile project(':aware-core')
-    compile 'com.google.android.gms:play-services:6.1.11'
-    compile 'com.android.support:appcompat-v7:20.0.0'
-    compile 'com.android.support:support-v4:20.0.0'
 }
