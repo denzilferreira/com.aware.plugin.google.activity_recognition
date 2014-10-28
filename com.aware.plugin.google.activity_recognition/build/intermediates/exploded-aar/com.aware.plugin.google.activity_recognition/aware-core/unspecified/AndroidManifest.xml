@@ -17,7 +17,6 @@
     <!-- <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> -->
     <!-- <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> -->
     <!-- <uses-permission android:name="android.permission.GET_TASKS" /> -->
-    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
     <!-- <uses-permission android:name="android.permission.READ_SMS" /> -->
     <!-- <uses-permission android:name="android.permission.READ_CONTACTS" /> -->
     <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
@@ -27,7 +26,6 @@
     <!-- <uses-permission android:name="android.permission.WAKE_LOCK" /> -->
     <!-- <uses-permission android:name="android.permission.READ_CALL_LOG" /> -->
     <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- <uses-feature android:name="android.hardware.camera" /> -->
     <!-- <uses-feature android:name="android.hardware.camera.autofocus" /> -->
 
@@ -52,6 +50,8 @@
 
     <uses-permission android:name="com.aware.READ_CONTEXT_DATA" />
     <uses-permission android:name="com.aware.WRITE_CONTEXT_DATA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -67,62 +67,67 @@
 
         <!-- AWARE Interfaces -->
 
+        <activity
+            android:name="com.aware.Aware_Preferences"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:enabled="@bool/display_aware"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/aware_sensors"
+            android:parentActivityName="com.aware.Aware_Preferences" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <!-- <activity -->
-        <!-- android:name="com.aware.Aware_Preferences" -->
-        <!-- android:configChanges="keyboardHidden|orientation|screenSize" -->
-        <!-- android:enabled="@bool/display_aware" -->
-        <!-- android:exported="true" -->
-        <!-- android:icon="@drawable/ic_launcher" -->
-        <!-- android:label="@string/aware_sensors" -->
-        <!-- android:parentActivityName="com.aware.Aware_Preferences"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- <meta-data android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value="com.aware.Aware_Preferences" /> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name="com.aware.ui.Stream_UI" -->
-        <!-- android:exported="true" -->
-        <!-- android:icon="@drawable/ic_launcher" -->
-        <!-- android:label="Stream" -->
-        <!-- android:noHistory="true" android:enabled="@bool/display_aware" android:launchMode="singleInstance" -->
-        <!-- > -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.ASSIST" /> -->
-        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- <meta-data -->
-        <!-- android:name="com.android.systemui.action_assist_icon" -->
-        <!-- android:resource="@drawable/ic_launcher" /> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name="com.aware.ui.CameraStudy" -->
-        <!-- android:configChanges="keyboardHidden|orientation|screenSize" -->
-        <!-- android:enabled="@bool/display_aware" -->
-        <!-- > -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name="com.aware.ui.Plugins_Manager" -->
-        <!-- android:configChanges="keyboardHidden|orientation|screenSize" -->
-        <!-- android:enabled="@bool/display_aware" -->
-        <!-- android:exported="true" -->
-        <!-- android:icon="@drawable/ic_launcher_settings" -->
-        <!-- android:label="@string/aware_plugins" -->
-        <!-- > -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name="com.aware.ui.ESM_Queue" -->
-        <!-- android:configChanges="keyboardHidden|orientation|screenSize" -->
-        <!-- android:excludeFromRecents="true" -->
-        <!-- android:exported="true" -->
-        <!-- android:showOnLockScreen="true" -->
-        <!-- android:noHistory="true" android:clearTaskOnLaunch="true" android:launchMode="singleInstance" android:theme="@android:style/Theme.DeviceDefault.Dialog"> -->
-        <!-- </activity> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aware.Aware_Preferences" />
+        </activity>
+        <activity
+            android:name="com.aware.ui.Stream_UI"
+            android:enabled="@bool/display_aware"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="Stream"
+            android:launchMode="singleInstance"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.ASSIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.android.systemui.action_assist_icon"
+                android:resource="@drawable/ic_launcher" />
+        </activity>
+        <activity
+            android:name="com.aware.ui.CameraStudy"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:enabled="@bool/display_aware" >
+        </activity>
+        <activity
+            android:name="com.aware.ui.Plugins_Manager"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:enabled="@bool/display_aware"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_settings"
+            android:label="@string/aware_plugins" >
+        </activity>
+        <activity
+            android:name="com.aware.ui.ESM_Queue"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:showOnLockScreen="true"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog" >
+        </activity>
 
         <!-- AWARE Services -->
 
