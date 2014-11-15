@@ -50,4 +50,4 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/Users/denzil/BTSync/Programming/aware-client/aware-core/src/main/res/layout/plugins_store_ui.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/Users/denzil/Dropbox/Programming/aware-client/aware-core/src/main/res/layout/plugins_store_ui.xml -->

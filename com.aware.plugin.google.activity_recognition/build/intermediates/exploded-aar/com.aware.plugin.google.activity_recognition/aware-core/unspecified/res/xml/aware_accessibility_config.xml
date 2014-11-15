@@ -8,4 +8,4 @@
     android:accessibilityFlags="flagDefault"
     android:notificationTimeout="50"
     android:canRetrieveWindowContent="true"
-/><!-- From: file:/Users/denzil/BTSync/Programming/aware-client/aware-core/src/main/res/xml/aware_accessibility_config.xml -->
+/><!-- From: file:/Users/denzil/Dropbox/Programming/aware-client/aware-core/src/main/res/xml/aware_accessibility_config.xml -->

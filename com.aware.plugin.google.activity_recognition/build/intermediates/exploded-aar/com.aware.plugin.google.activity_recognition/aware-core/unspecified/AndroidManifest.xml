@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.aware"
-    android:versionCode="342"
+    android:versionCode="343"
     android:versionName="3.0" >
 
     <uses-sdk
@@ -31,7 +31,7 @@
 
 
     <!-- Compatibility for Android Wear -->
-    <!-- <uses-feature android:name="android.hardware.type.watch" /> -->
+    <uses-feature android:name="android.hardware.type.watch" />
 
     <permission
         android:name="com.aware.READ_CONTEXT_DATA"
@@ -140,6 +140,7 @@
         </service>
         <service
             android:name="com.aware.Applications"
+            android:enabled="@bool/display_aware"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
             <intent-filter>
@@ -284,12 +285,16 @@
             android:name="com.aware.Wear_Sync"
             android:exported="true" />
         <service
-            android:name="com.aware.Wear_Sync$WearListener"
+            android:name="com.aware.Wear_Service"
+            android:enabled="@bool/display_aware"
             android:exported="true" >
             <intent-filter>
                 <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
             </intent-filter>
         </service>
+        <service
+            android:name="com.aware.Wear_Sync$Wear_Bg"
+            android:exported="true" />
 
         <!-- AWARE BroadcastReceivers -->
 
@@ -311,13 +316,6 @@
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
 
                 <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="com.aware.Wear_Sync$AWAREListener"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="ACTION_AWARE_CONFIG_CHANGED" />
             </intent-filter>
         </receiver>
         <receiver
