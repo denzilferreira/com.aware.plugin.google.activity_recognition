@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     package="com.aware.plugin.google.activity_recognition"
-    android:versionCode="15"
+    android:versionCode="16"
     android:versionName="6.0" >
 
     <uses-sdk
