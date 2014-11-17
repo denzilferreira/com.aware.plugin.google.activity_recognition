@@ -283,6 +283,7 @@
             android:exported="true" />
         <service
             android:name="com.aware.Wear_Sync"
+            android:enabled="@bool/display_aware"
             android:exported="true" />
         <service
             android:name="com.aware.Wear_Service"

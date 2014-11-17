@@ -54,7 +54,7 @@
         jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="f204bfe51a6da4121c04a29b19dd004a67604d6b"/>
+        sha1="4e077f781eef8bd90c1122b502aa1b47c1577260"/>
     <item
         dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-ee462de5a1f670a58c5c81d3bd1ca561142c4555.jar"
         jar="/Users/denzil/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
