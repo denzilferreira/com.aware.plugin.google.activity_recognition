@@ -29,7 +29,7 @@
     <!-- From: file:/Users/denzil/Dropbox/Programming/aware-client/aware-core/src/main/res/values/bools.xml -->
     <eat-comment />
 
-    <item name="display_aware" format="boolean" type="bool">false</item>
+    <item name="display_aware" format="boolean" type="bool">true</item>
     <!-- From: file:/Users/denzil/Dropbox/Programming/aware-client/aware-core/src/main/res/values/color.xml -->
     <eat-comment />
 
