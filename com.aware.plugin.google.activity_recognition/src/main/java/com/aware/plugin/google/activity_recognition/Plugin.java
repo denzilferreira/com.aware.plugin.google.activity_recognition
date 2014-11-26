@@ -77,7 +77,10 @@ public class Plugin extends Aware_Plugin implements ConnectionCallbacks, OnConne
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		if( ! gARClient.isConnected() && ! gARClient.isConnecting() ) gARClient.connect();
 		if( gARClient.isConnected() ) {
-			gARClient.requestActivityUpdates(Long.parseLong(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending);
+            if( Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0 ) {
+                Aware.setSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
+            }
+			gARClient.requestActivityUpdates(Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending);
 		}
 		
 		if( Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).equals("false") ) {
@@ -89,15 +92,16 @@ public class Plugin extends Aware_Plugin implements ConnectionCallbacks, OnConne
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		
+
+        Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, false);
+
 		//we might get here if phone doesn't support Google Services
-		if ( gARClient != null ) {
+		if ( gARClient != null && gARClient.isConnected() ) {
 			gARClient.removeActivityUpdates(gARPending);
 			gARClient.unregisterConnectionCallbacks(this);
 			gARClient.unregisterConnectionFailedListener(this);
-			if( gARClient.isConnected() ) gARClient.disconnect();
+			gARClient.disconnect();
 		}
-		Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, false);
 	}
 
 	private boolean is_google_services_available() {
