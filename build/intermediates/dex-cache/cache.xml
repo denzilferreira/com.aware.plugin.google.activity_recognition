@@ -1,119 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-03cdde352fa03e8a2cb28b98ea837b9aa5c638ac.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.0/classes.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="7d2525cba8ed61fff102977caed964fc22061e34"/>
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-75afcadc88d5b3dbf277f4a3233974e92af35157.jar" />
+    </item>
     <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-cdcf8b2efcdfe7e7914bf747e7513d679becee7c.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.11/classes.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="0f700f6802ba1a1f1fa7ac26d5db0666a89d75a6"/>
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-0bae1048e58eae6246b0b235138ab2462ee1f3ae.jar" />
+    </item>
     <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-2197fc31e4009e36970f908c730ef9356a071ce5.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-95e8777a8a499b449362016a7d1ebfaccf7a01b4.jar" />
+    </item>
     <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-a3e904030fd48e051e0870d35b3d57fdbd331538.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.2/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da"/>
+        revision="21.1.2"
+        sha1="b017100da14f9c158c9f5f2f508333c224b24a7c">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-db0a3a434ace60108a1cbd7e5c1fc0db8b899e2d.jar" />
+    </item>
     <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/support-annotations-21.0.2-2e9dcbe148a4b08eb37371c2d0f3707403d512e4.jar"
-        jar="/Users/denzil/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/phoneRelease/libs/mqtt-client-0.4.0.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6"/>
+        revision="21.1.2"
+        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/mqtt-client-0.4.0-9e9ce6f8f284463a72df68603f9fc9f80c67faca.jar" />
+    </item>
     <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-0fceebdaf152b3398e539339a126a14c1911c446.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.0/classes.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="7d2525cba8ed61fff102977caed964fc22061e34"/>
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-586beafb59535a45de9a8ff9c857ebca9cd3eb7c.jar" />
+    </item>
     <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-22634d96abb625539401d3513ad683448c5545c9.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.0/classes.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.2/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="6c6b497aa9e3aadbaabf975379e7914fa9e65523"/>
+        revision="21.1.2"
+        sha1="9742ced04aafd9ac97dd2c66c1aa0e32d2ae7e54">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-3b4ccae97e1ed6538310199f2a6d0e2de63752f0.jar" />
+    </item>
     <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/zbar-59a89db96714cbbc29f4aefd834a7c4c5cfee4a5.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/libs/zbar.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/phoneRelease/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0"/>
+        revision="21.1.2"
+        sha1="0ab3a86a2903048c7a9f121218db3f9817ec80eb">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-342ea29805807e7eb98ea2121dc8b3231438c5e1.jar" />
+    </item>
     <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/mqtt-client-0.4.0-3addc749d684daf6ba2388f868870bb6f30b7449.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/libs/mqtt-client-0.4.0.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.github.machinarius/preferencefragment/0.1.1/classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6"/>
+        revision="21.1.2"
+        sha1="648463e00c6883d01b6c11a6781776203334b6fc">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-feaab4c315c957db827aa2dea23605a52bb1d449.jar" />
+    </item>
     <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-cdc532660db8c94fedd83e832b41b86454c92935.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/classes.jar"
+        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/phoneRelease/libs/zbar.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="783b42726282de72a4f69b3aa26704086c2db1c9"/>
+        revision="21.1.2"
+        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/zbar-9334e07aae45065d266061249a6006bb74ff38f3.jar" />
+    </item>
     <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-811768b483a81a42e627434e113c1f1f46e96735.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/classes.jar"
+        jar="/Users/denzil/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="81bdc5196612b89f66f664832050a2450b64e27e"/>
-    <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-003dd5bfbf78d1d28e93266b98e507685fe0aa2a.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3"/>
-    <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-ee85c09528ec2414ca5d919a221dcc44a9a1f997.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="6c6b497aa9e3aadbaabf975379e7914fa9e65523"/>
-    <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/zbar-2c76568b39b9196d833637cc68516a07560baad9.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/libs/zbar.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0"/>
-    <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/mqtt-client-0.4.0-e228b31b99e9321a57344b13b006ca544cc2394b.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.aware.plugin.google.activity_recognition/aware-core/unspecified/libs/mqtt-client-0.4.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6"/>
-    <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-faf95349828933c379a014c4a12e6613d4849711.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
-    <item
-        dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-36fb07b775e78fbfee254490f25a85b1c64ec74c.jar"
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
-    <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-ed1a3fcac55c2f6bc5fc1450074cf83eb2e17dd9.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="7ae2d38807a43b2f2185ff4089a92c790b579e54"/>
-    <item
-        dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/internal_impl-21.0.2-b3fb3f6e24d03e5b8e6a89405f3d12cf1db0b240.jar"
-        jar="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f"/>
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/denzil/Dropbox/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-eced5058900290c6cb90f2f621f63fbcbf0a5309.jar" />
+    </item>
 
-</pre-dex-items>
+</items>

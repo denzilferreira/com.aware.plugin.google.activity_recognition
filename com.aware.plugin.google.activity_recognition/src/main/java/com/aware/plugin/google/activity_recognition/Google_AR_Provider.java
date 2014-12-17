@@ -166,7 +166,7 @@ public class Google_AR_Provider extends ContentProvider {
     @Override
     public boolean onCreate() {
         
-    	AUTHORITY = BuildConfig.PACKAGE_NAME + ".provider";
+    	AUTHORITY = getContext().getPackageName() + ".provider";
     	
     	sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         sUriMatcher.addURI(Google_AR_Provider.AUTHORITY, DATABASE_TABLES[0],
