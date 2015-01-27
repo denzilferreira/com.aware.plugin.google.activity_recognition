@@ -1861,8 +1861,6 @@ containing a value of this type.
         public static final int dialog_fixed_width_minor=0x7f0a002c;
         public static final int disabled_alpha_material_dark=0x7f0a002d;
         public static final int disabled_alpha_material_light=0x7f0a002e;
-        public static final int preference_fragment_padding_bottom=0x7f0a002f;
-        public static final int preference_fragment_padding_side=0x7f0a0030;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_holo_dark=0x7f020000;
@@ -2003,16 +2001,14 @@ containing a value of this type.
         public static final int alignBounds=0x7f0b0015;
         public static final int alignMargins=0x7f0b0016;
         public static final int always=0x7f0b002c;
-        public static final int aware_about=0x7f0b00a9;
+        public static final int aware_about=0x7f0b00a5;
         public static final int aware_navigation=0x7f0b0068;
-        public static final int aware_qrcode=0x7f0b00a8;
+        public static final int aware_qrcode=0x7f0b00a4;
         public static final int aware_toolbar=0x7f0b0064;
         public static final int aware_ui_main=0x7f0b0065;
-        public static final int back_button=0x7f0b009f;
         public static final int beginning=0x7f0b0025;
         public static final int book_now=0x7f0b003c;
         public static final int bottom=0x7f0b0017;
-        public static final int button_bar=0x7f0b009e;
         public static final int buyButton=0x7f0b0039;
         public static final int buy_now=0x7f0b003d;
         public static final int buy_with_google=0x7f0b003e;
@@ -2020,7 +2016,7 @@ containing a value of this type.
         public static final int center=0x7f0b0018;
         public static final int center_horizontal=0x7f0b0019;
         public static final int center_vertical=0x7f0b001a;
-        public static final int change_stream=0x7f0b00a4;
+        public static final int change_stream=0x7f0b00a0;
         public static final int chart_physical_activity=0x7f0b0083;
         public static final int checkbox=0x7f0b004e;
         public static final int checkbox_container=0x7f0b0076;
@@ -2079,7 +2075,6 @@ containing a value of this type.
         public static final int nav_placeholder=0x7f0b006a;
         public static final int nav_title=0x7f0b006b;
         public static final int never=0x7f0b002f;
-        public static final int next_button=0x7f0b00a1;
         public static final int none=0x7f0b000e;
         public static final int normal=0x7f0b000a;
         public static final int pkg_frame=0x7f0b0095;
@@ -2119,16 +2114,15 @@ containing a value of this type.
         public static final int showCustom=0x7f0b000f;
         public static final int showHome=0x7f0b0010;
         public static final int showTitle=0x7f0b0011;
-        public static final int skip_button=0x7f0b00a0;
         public static final int split_action_bar=0x7f0b0007;
         public static final int start=0x7f0b0023;
         public static final int store_container=0x7f0b009b;
-        public static final int stream_container=0x7f0b00a3;
-        public static final int stream_main=0x7f0b00a2;
+        public static final int stream_container=0x7f0b009f;
+        public static final int stream_main=0x7f0b009e;
         public static final int strict_sandbox=0x7f0b0038;
-        public static final int study_description=0x7f0b00a6;
-        public static final int study_name=0x7f0b00a5;
-        public static final int study_pi=0x7f0b00a7;
+        public static final int study_description=0x7f0b00a2;
+        public static final int study_name=0x7f0b00a1;
+        public static final int study_pi=0x7f0b00a3;
         public static final int submit_area=0x7f0b0061;
         public static final int tabMode=0x7f0b000b;
         public static final int terrain=0x7f0b002b;
@@ -2150,7 +2144,6 @@ containing a value of this type.
     public static final class integer {
         public static final int abc_max_action_buttons=0x7f0c0000;
         public static final int google_play_services_version=0x7f0c0001;
-        public static final int preference_fragment_scrollbarStyle=0x7f0c0002;
     }
     public static final class layout {
         public static final int abc_action_bar_title_item=0x7f030000;
@@ -2190,10 +2183,9 @@ containing a value of this type.
         public static final int plugins_store_pkg_detail=0x7f030022;
         public static final int plugins_store_pkg_list_item=0x7f030023;
         public static final int plugins_store_ui=0x7f030024;
-        public static final int preference_list_fragment=0x7f030025;
-        public static final int stream_ui=0x7f030026;
-        public static final int study_info=0x7f030027;
-        public static final int support_simple_spinner_dropdown_item=0x7f030028;
+        public static final int stream_ui=0x7f030025;
+        public static final int study_info=0x7f030026;
+        public static final int support_simple_spinner_dropdown_item=0x7f030027;
     }
     public static final class menu {
         public static final int aware_menu=0x7f0f0000;
@@ -2240,47 +2232,44 @@ containing a value of this type.
         public static final int aware_stream=0x7f0d0021;
         public static final int aware_studies=0x7f0d0022;
         public static final int aware_team=0x7f0d0023;
-        public static final int back_button_label=0x7f0d0024;
-        public static final int common_android_wear_notification_needs_update_text=0x7f0d0025;
-        public static final int common_android_wear_update_text=0x7f0d0026;
-        public static final int common_android_wear_update_title=0x7f0d0027;
-        public static final int common_google_play_services_enable_button=0x7f0d0028;
-        public static final int common_google_play_services_enable_text=0x7f0d0029;
-        public static final int common_google_play_services_enable_title=0x7f0d002a;
-        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f0d002b;
-        public static final int common_google_play_services_install_button=0x7f0d002c;
-        public static final int common_google_play_services_install_text_phone=0x7f0d002d;
-        public static final int common_google_play_services_install_text_tablet=0x7f0d002e;
-        public static final int common_google_play_services_install_title=0x7f0d002f;
-        public static final int common_google_play_services_invalid_account_text=0x7f0d0030;
-        public static final int common_google_play_services_invalid_account_title=0x7f0d0031;
-        public static final int common_google_play_services_needs_enabling_title=0x7f0d0032;
-        public static final int common_google_play_services_network_error_text=0x7f0d0033;
-        public static final int common_google_play_services_network_error_title=0x7f0d0034;
-        public static final int common_google_play_services_notification_needs_installation_title=0x7f0d0035;
-        public static final int common_google_play_services_notification_needs_update_title=0x7f0d0036;
-        public static final int common_google_play_services_notification_ticker=0x7f0d0037;
-        public static final int common_google_play_services_unknown_issue=0x7f0d0038;
-        public static final int common_google_play_services_unsupported_text=0x7f0d0039;
-        public static final int common_google_play_services_unsupported_title=0x7f0d003a;
-        public static final int common_google_play_services_update_button=0x7f0d003b;
-        public static final int common_google_play_services_update_text=0x7f0d003c;
-        public static final int common_google_play_services_update_title=0x7f0d003d;
-        public static final int common_open_on_phone=0x7f0d003e;
-        public static final int common_signin_button_text=0x7f0d003f;
-        public static final int common_signin_button_text_long=0x7f0d0040;
-        public static final int create_calendar_message=0x7f0d0041;
-        public static final int create_calendar_title=0x7f0d0042;
-        public static final int decline=0x7f0d0043;
-        public static final int drawer_close=0x7f0d0044;
-        public static final int drawer_open=0x7f0d0045;
-        public static final int next_button_label=0x7f0d0046;
-        public static final int read_permission=0x7f0d0047;
-        public static final int skip_button_label=0x7f0d0048;
-        public static final int store_picture_message=0x7f0d0049;
-        public static final int store_picture_title=0x7f0d004a;
-        public static final int wallet_buy_button_place_holder=0x7f0d004b;
-        public static final int write_permission=0x7f0d004c;
+        public static final int common_android_wear_notification_needs_update_text=0x7f0d0024;
+        public static final int common_android_wear_update_text=0x7f0d0025;
+        public static final int common_android_wear_update_title=0x7f0d0026;
+        public static final int common_google_play_services_enable_button=0x7f0d0027;
+        public static final int common_google_play_services_enable_text=0x7f0d0028;
+        public static final int common_google_play_services_enable_title=0x7f0d0029;
+        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f0d002a;
+        public static final int common_google_play_services_install_button=0x7f0d002b;
+        public static final int common_google_play_services_install_text_phone=0x7f0d002c;
+        public static final int common_google_play_services_install_text_tablet=0x7f0d002d;
+        public static final int common_google_play_services_install_title=0x7f0d002e;
+        public static final int common_google_play_services_invalid_account_text=0x7f0d002f;
+        public static final int common_google_play_services_invalid_account_title=0x7f0d0030;
+        public static final int common_google_play_services_needs_enabling_title=0x7f0d0031;
+        public static final int common_google_play_services_network_error_text=0x7f0d0032;
+        public static final int common_google_play_services_network_error_title=0x7f0d0033;
+        public static final int common_google_play_services_notification_needs_installation_title=0x7f0d0034;
+        public static final int common_google_play_services_notification_needs_update_title=0x7f0d0035;
+        public static final int common_google_play_services_notification_ticker=0x7f0d0036;
+        public static final int common_google_play_services_unknown_issue=0x7f0d0037;
+        public static final int common_google_play_services_unsupported_text=0x7f0d0038;
+        public static final int common_google_play_services_unsupported_title=0x7f0d0039;
+        public static final int common_google_play_services_update_button=0x7f0d003a;
+        public static final int common_google_play_services_update_text=0x7f0d003b;
+        public static final int common_google_play_services_update_title=0x7f0d003c;
+        public static final int common_open_on_phone=0x7f0d003d;
+        public static final int common_signin_button_text=0x7f0d003e;
+        public static final int common_signin_button_text_long=0x7f0d003f;
+        public static final int create_calendar_message=0x7f0d0040;
+        public static final int create_calendar_title=0x7f0d0041;
+        public static final int decline=0x7f0d0042;
+        public static final int drawer_close=0x7f0d0043;
+        public static final int drawer_open=0x7f0d0044;
+        public static final int read_permission=0x7f0d0045;
+        public static final int store_picture_message=0x7f0d0046;
+        public static final int store_picture_title=0x7f0d0047;
+        public static final int wallet_buy_button_place_holder=0x7f0d0048;
+        public static final int write_permission=0x7f0d0049;
     }
     public static final class style {
         public static final int Aware_Toolbar=0x7f0e0000;
