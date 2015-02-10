@@ -1,6 +1,5 @@
 package com.aware.plugin.google.activity_recognition;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
@@ -49,22 +48,22 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 	
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-		Preference preference = (Preference) findPreference(key);
+		Preference preference = findPreference(key);
+
 		if( preference.getKey().equals(STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION) ) {
 			boolean is_active = sharedPreferences.getBoolean(key, false);
 			Aware.setSetting( getApplicationContext(), key, is_active);
-			
-			if( is_active ) {
-				Aware.startPlugin(getApplicationContext(), getPackageName());
-			} else {
-				Aware.stopPlugin(getApplicationContext(), getPackageName());
-			}
+            if( is_active ) {
+                Aware.startPlugin(getApplicationContext(), getPackageName());
+            } else {
+                Aware.stopPlugin(getApplicationContext(), getPackageName());
+            }
 		}
 		if( preference.getKey().equals(FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) {
 			preference.setSummary( sharedPreferences.getString(key, "60") + " seconds" );
 			Aware.setSetting( getApplicationContext(), key, sharedPreferences.getString(key, "60") );
+            Aware.startPlugin(getApplicationContext(), getPackageName());
 		}
-		Intent apply = new Intent(Aware.ACTION_AWARE_REFRESH);
-		sendBroadcast(apply);
+
 	}	
 }

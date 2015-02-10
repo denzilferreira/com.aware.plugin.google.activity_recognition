@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.7/classes.jar"
+        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="20e29250a179afc6adba1dabc5804d30fda03061">
-        <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-185ee3b6f6ad6e036d30ccdb0f6c14cbb6aaa236.jar" />
+        sha1="0c47b9d9e68a9f0b5a7e4c14453ed467e1f1d3cf">
+        <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-897ea3d06a79520dac20096e0a308a9877d66d17.jar" />
     </item>
     <item
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
@@ -16,6 +16,13 @@
         <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-f4b3f05dd7d28e812aa4b66746664ca1a94fb1bf.jar" />
     </item>
     <item
+        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/libs/zbar.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
+        <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/zbar-19a6b4d8617fde19f5fd5c8a41ea851dda1bf870.jar" />
+    </item>
+    <item
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -23,11 +30,11 @@
         <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-0b6a69d0933906562d165fc53a60ec275fc503a3.jar" />
     </item>
     <item
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.7/libs/zbar.jar"
+        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/libs/mqtt-client-0.4.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
-        <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/zbar-a3344fc3fa2810bf0da56a3f05ada6d42e6bf028.jar" />
+        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6">
+        <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/mqtt-client-0.4.0-cc64c837c6f54daf981918d771238fd4060073fe.jar" />
     </item>
     <item
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
@@ -42,13 +49,6 @@
         revision="21.1.2"
         sha1="2e8c06a7aad26ba8d2d5cab8134556594fe36856">
         <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-b3d9ae135e138282d1abd199fa31476979c2508a.jar" />
-    </item>
-    <item
-        jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.7/libs/mqtt-client-0.4.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6">
-        <dex dex="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/mqtt-client-0.4.0-4b9a5f75d45b577db7b6f0ead3760ebf2e91ca84.jar" />
     </item>
     <item
         jar="/Users/denzil/BTSync/Programming/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"

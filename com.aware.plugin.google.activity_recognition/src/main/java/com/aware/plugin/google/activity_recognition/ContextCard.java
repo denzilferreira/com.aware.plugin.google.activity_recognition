@@ -8,17 +8,20 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.aware.utils.Converters;
+import com.aware.utils.IContextCard;
 
 /**
  * New Stream UI cards<br/>
  * Implement here what you see on your Plugin's UI.
  * @author denzilferreira
  */
-public class ContextCard {
+public class ContextCard implements IContextCard {
+
+    public ContextCard(){};
 	
-	public static View getContextCard(Context context) {
+	public View getContextCard(Context context) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View mInflated = (View) inflater.inflate(R.layout.layout, null);
+		View mInflated = inflater.inflate(R.layout.layout, null);
 		
 		TextView still = (TextView) mInflated.findViewById(R.id.time_still);
         TextView walking = (TextView) mInflated.findViewById(R.id.time_walking);

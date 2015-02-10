@@ -1,15 +1,15 @@
-/**
-@author: denzil
- */
+
 package com.aware.plugin.google.activity_recognition;
 
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.util.Log;
 
 import com.aware.Aware;
+import com.aware.Aware_Preferences;
 import com.aware.plugin.google.activity_recognition.Google_AR_Provider.Google_Activity_Recognition_Data;
 import com.aware.utils.Aware_Plugin;
 import com.google.android.gms.common.ConnectionResult;
@@ -23,18 +23,19 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	public static String EXTRA_ACTIVITY = "activity";
 	public static String EXTRA_CONFIDENCE = "confidence";
 
-	private PendingIntent gARPending = null;
-	private GoogleApiClient gARClient = null;
+	private static PendingIntent gARPending = null;
+	private static GoogleApiClient gARClient = null;
 
 	public static int current_activity = -1;
 	public static int current_confidence = -1;
+    private static PowerManager.WakeLock wakelock;
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 
 		TAG = "AWARE::Google Activity Recognition";
-		DEBUG = true;
+		DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
 
 		DATABASE_TABLES = Google_AR_Provider.DATABASE_TABLES;
 		TABLES_FIELDS = Google_AR_Provider.TABLES_FIELDS;
@@ -53,39 +54,34 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 		Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, true);
 		if( Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0 ) {
 			Aware.setSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
-		} else {
-			Aware.setSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION));
 		}
-	
-		Intent refresh = new Intent(Aware.ACTION_AWARE_REFRESH);
-		sendBroadcast(refresh);
-	
+
+        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        wakelock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG + " lock");
+        wakelock.acquire();
+
 		if ( ! is_google_services_available() ) {
 			Log.e(TAG,"Google Services activity recognition not available on this device.");
 			stopSelf();
 		} else {
-			gARClient = new GoogleApiClient.Builder(this).addApi(ActivityRecognition.API).addConnectionCallbacks(this).addOnConnectionFailedListener(this).build();
+			gARClient = new GoogleApiClient.Builder(this)
+                    .addApi(ActivityRecognition.API)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .build();
+            gARClient.connect();
 
             Intent gARIntent = new Intent();
 			gARIntent.setClassName(getPackageName(), getPackageName() + ".Algorithm");
-			gARPending = PendingIntent.getService(this, 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-			if( ! gARClient.isConnected() && ! gARClient.isConnecting() ) gARClient.connect();
+			gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		}
 	}
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		if( ! gARClient.isConnected() && ! gARClient.isConnecting() ) gARClient.connect();
 		if( gARClient.isConnected() ) {
-            if( Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0 ) {
-                Aware.setSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
-            }
-			ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates( gARClient,Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending );
-		}
-		
-		if( Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).equals("false") ) {
-			stopSelf();
-		}
+            ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates( gARClient, Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending );
+        }
 		return START_STICKY;
 	}
 
@@ -93,45 +89,32 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	public void onDestroy() {
 		super.onDestroy();
 
+        wakelock.release();
         Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, false);
 
 		//we might get here if phone doesn't support Google Services
 		if ( gARClient != null && gARClient.isConnected() ) {
 			ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates(gARClient, gARPending);
-            gARClient.unregisterConnectionCallbacks(this);
-			gARClient.unregisterConnectionFailedListener(this);
-			gARClient.disconnect();
 		}
 	}
 
 	private boolean is_google_services_available() {
-		if ( ConnectionResult.SUCCESS == GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext()) ) {
-			return true;
-		} else {
-			return false;
-		}
+		return (ConnectionResult.SUCCESS == GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext()));
 	}
 
 	@Override
 	public void onConnectionFailed(ConnectionResult connection_result) {
-		if( connection_result.hasResolution() ) {
-			if( ! gARClient.isConnected() || ! gARClient.isConnecting() ) gARClient.connect();
-		} else {
-			Log.w(TAG,"Error connecting to Google's activity recognition services, will try again in 5 minutes");
-		}
+		Log.w(TAG,"Error connecting to Google's activity recognition services, will try again in 5 minutes");
 	}
 
 	@Override
 	public void onConnected(Bundle bundle) {
-        ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(gARClient, Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending);
+        Log.i(TAG,"Connected to Google's Activity Recognition API");
+        Aware.startPlugin(this, getPackageName());
 	}
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.w(TAG,"Disconnected from Google's activity recognition services");
-        if( gARClient != null && ( ! gARClient.isConnected() || ! gARClient.isConnecting() ) ) {
-            gARClient.connect();
-        }
-        ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates( gARClient,Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending );
+        Log.w(TAG,"Error connecting to Google's activity recognition services, will try again in 5 minutes");
     }
 }

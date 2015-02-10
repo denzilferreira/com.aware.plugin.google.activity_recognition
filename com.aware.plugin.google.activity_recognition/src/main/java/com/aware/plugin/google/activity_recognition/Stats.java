@@ -48,7 +48,7 @@ public class Stats {
 	 * @return total_time_still
 	 */
 	public static long getTimeBiking(ContentResolver resolver, long timestamp_start, long timestamp_end) {
-		long total_time_still = 0;
+		long total_time_bike = 0;
 		
 		String selection = Google_Activity_Recognition_Data.TIMESTAMP + " between " + timestamp_start + " AND " + timestamp_end;
         Cursor activity_raw = resolver.query(Google_Activity_Recognition_Data.CONTENT_URI, null, selection, null, Google_Activity_Recognition_Data.TIMESTAMP + " ASC");
@@ -61,7 +61,7 @@ public class Stats {
 				long activity_timestamp = activity_raw.getLong(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.TIMESTAMP));
 				
 				if( activity == DetectedActivity.ON_BICYCLE && last_activity == DetectedActivity.ON_BICYCLE ) { //continuing biking 
-					total_time_still += activity_timestamp-last_activity_timestamp;
+                    total_time_bike += activity_timestamp-last_activity_timestamp;
 				}
 				
 				last_activity = activity;
@@ -69,7 +69,7 @@ public class Stats {
 			}
 		}
 		if( activity_raw != null && ! activity_raw.isClosed() ) activity_raw.close();
-		return total_time_still;
+		return total_time_bike;
 	}
 	
 	/**
@@ -80,7 +80,7 @@ public class Stats {
 	 * @return total_time_still
 	 */
 	public static long getTimeVehicle(ContentResolver resolver, long timestamp_start, long timestamp_end) {
-		long total_time_still = 0;
+		long total_time_vehicle = 0;
 		
 		String selection = Google_Activity_Recognition_Data.TIMESTAMP + " between " + timestamp_start + " AND " + timestamp_end;
         Cursor activity_raw = resolver.query(Google_Activity_Recognition_Data.CONTENT_URI, null, selection, null, Google_Activity_Recognition_Data.TIMESTAMP + " ASC");
@@ -93,7 +93,7 @@ public class Stats {
 				long activity_timestamp = activity_raw.getLong(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.TIMESTAMP));
 				
 				if( activity == DetectedActivity.IN_VEHICLE && last_activity == DetectedActivity.IN_VEHICLE ) { //continuing in vehicle 
-					total_time_still += activity_timestamp-last_activity_timestamp;
+                    total_time_vehicle += activity_timestamp-last_activity_timestamp;
 				}
 				
 				last_activity = activity;
@@ -101,7 +101,7 @@ public class Stats {
 			}
 		}
 		if( activity_raw != null && ! activity_raw.isClosed() ) activity_raw.close();
-		return total_time_still;
+		return total_time_vehicle;
 	}
 	
 	/**
@@ -112,12 +112,13 @@ public class Stats {
 	 * @return total_time_still
 	 */
 	public static long getTimeWalking(ContentResolver resolver, long timestamp_start, long timestamp_end) {
-		long total_time_still = 0;
+		long total_time_walking = 0;
 		
 		String selection = Google_Activity_Recognition_Data.TIMESTAMP + " between " + timestamp_start + " AND " + timestamp_end;
         Cursor activity_raw = resolver.query(Google_Activity_Recognition_Data.CONTENT_URI, null, selection, null, Google_Activity_Recognition_Data.TIMESTAMP + " ASC");
 		if( activity_raw != null && activity_raw.moveToFirst() ) {
-			int last_activity = activity_raw.getInt(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.ACTIVITY_TYPE));
+
+            int last_activity = activity_raw.getInt(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.ACTIVITY_TYPE));
 			long last_activity_timestamp = activity_raw.getLong(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.TIMESTAMP));
 			
 			while(activity_raw.moveToNext()) {
@@ -125,7 +126,7 @@ public class Stats {
 				long activity_timestamp = activity_raw.getLong(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.TIMESTAMP));
 				
 				if( activity == DetectedActivity.ON_FOOT && last_activity == DetectedActivity.ON_FOOT ) { //continuing on foot
-					total_time_still += activity_timestamp-last_activity_timestamp;
+                    total_time_walking += activity_timestamp-last_activity_timestamp;
 				}
 				
 				last_activity = activity;
@@ -133,6 +134,6 @@ public class Stats {
 			}
 		}
 		if( activity_raw != null && ! activity_raw.isClosed() ) activity_raw.close();
-		return total_time_still;
+		return total_time_walking;
 	}
 }
