@@ -23,27 +23,32 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 	 * By default = 60 seconds
 	 */
 	public static final String FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION = "frequency_plugin_google_activity_recognition";
-	
+
+	private static CheckBoxPreference status;
+	private static EditTextPreference frequency;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(this);
-		syncSettings();
 	}
-	
-	private void syncSettings() {
-		CheckBoxPreference check = (CheckBoxPreference) findPreference(STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION);
-		check.setChecked(Aware.getSetting(getApplicationContext(), STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).equals("true"));
-		EditTextPreference frequency = (EditTextPreference) findPreference(FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION);
-		frequency.setSummary(Aware.getSetting(getApplicationContext(), FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION) + " seconds");
-	}
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
-		syncSettings();		
+
+		status = (CheckBoxPreference) findPreference(STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION);
+		if( Aware.getSetting(getApplicationContext(), STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0 ) {
+            Aware.setSetting(this, STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, true);
+        }
+		status.setChecked(Aware.getSetting(getApplicationContext(), STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).equals("true"));
+		frequency = (EditTextPreference) findPreference(FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION);
+        if( Aware.getSetting(this, FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0 ) {
+            Aware.setSetting(this, FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
+        }
+		frequency.setSummary(Aware.getSetting(getApplicationContext(), FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION) + " seconds");
 	}
 	
 	@Override
@@ -58,10 +63,11 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
             } else {
                 Aware.stopPlugin(getApplicationContext(), getPackageName());
             }
+            status.setChecked(is_active);
 		}
 		if( preference.getKey().equals(FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) {
-			preference.setSummary( sharedPreferences.getString(key, "60") + " seconds" );
-			Aware.setSetting( getApplicationContext(), key, sharedPreferences.getString(key, "60") );
+            Aware.setSetting( getApplicationContext(), key, sharedPreferences.getString(key, "60") );
+            frequency.setSummary(Aware.getSetting(getApplicationContext(), FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION) + " seconds");
             Aware.startPlugin(getApplicationContext(), getPackageName());
 		}
 

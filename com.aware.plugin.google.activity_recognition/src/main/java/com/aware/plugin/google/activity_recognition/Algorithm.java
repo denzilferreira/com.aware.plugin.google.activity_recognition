@@ -38,9 +38,7 @@ public class Algorithm extends IntentService {
             
             JSONArray activities = new JSONArray();
             List<DetectedActivity> otherActivities = result.getProbableActivities();
-            for( int i=0; i< otherActivities.size(); i++ ){
-                DetectedActivity activity = otherActivities.get(i);
-                
+            for(DetectedActivity activity : otherActivities ) {
                 try {
                     JSONObject item = new JSONObject();
                     item.put("activity", getActivityName(activity.getType()));

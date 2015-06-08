@@ -23,19 +23,18 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	public static String EXTRA_ACTIVITY = "activity";
 	public static String EXTRA_CONFIDENCE = "confidence";
 
-	private static PendingIntent gARPending = null;
-	private static GoogleApiClient gARClient = null;
+	private static Intent gARIntent;
+	private static PendingIntent gARPending;
+	private static GoogleApiClient gARClient;
 
 	public static int current_activity = -1;
 	public static int current_confidence = -1;
-    private static PowerManager.WakeLock wakelock;
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 
 		TAG = "AWARE::Google Activity Recognition";
-		DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
 
 		DATABASE_TABLES = Google_AR_Provider.DATABASE_TABLES;
 		TABLES_FIELDS = Google_AR_Provider.TABLES_FIELDS;
@@ -56,32 +55,29 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 			Aware.setSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
 		}
 
-        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
-        wakelock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG + " lock");
-        wakelock.acquire();
+		gARIntent = new Intent();
+		gARIntent.setClassName(getPackageName(), getPackageName() + ".Algorithm");
+		gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+		Aware.startPlugin(this, getPackageName());
+	}
+
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
 
 		if ( ! is_google_services_available() ) {
 			Log.e(TAG,"Google Services activity recognition not available on this device.");
 			stopSelf();
 		} else {
 			gARClient = new GoogleApiClient.Builder(this)
-                    .addApi(ActivityRecognition.API)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
+					.addApi(ActivityRecognition.API)
+					.addConnectionCallbacks(this)
+					.addOnConnectionFailedListener(this)
                     .build();
-            gARClient.connect();
 
-            Intent gARIntent = new Intent();
-			gARIntent.setClassName(getPackageName(), getPackageName() + ".Algorithm");
-			gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+			gARClient.connect();
 		}
-	}
-
-	@Override
-	public int onStartCommand(Intent intent, int flags, int startId) {
-		if( gARClient.isConnected() ) {
-            ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates( gARClient, Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending );
-        }
 		return START_STICKY;
 	}
 
@@ -89,13 +85,14 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	public void onDestroy() {
 		super.onDestroy();
 
-        wakelock.release();
         Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, false);
 
 		//we might get here if phone doesn't support Google Services
 		if ( gARClient != null && gARClient.isConnected() ) {
-			ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates(gARClient, gARPending);
+			ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates( gARClient, gARPending );
 		}
+
+        Aware.stopPlugin(this, getPackageName());
 	}
 
 	private boolean is_google_services_available() {
@@ -109,8 +106,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
 	@Override
 	public void onConnected(Bundle bundle) {
-        Log.i(TAG,"Connected to Google's Activity Recognition API");
-        Aware.startPlugin(this, getPackageName());
+        Log.i(TAG, "Connected to Google's Activity Recognition API");
+		ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(gARClient, Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending);
 	}
 
     @Override

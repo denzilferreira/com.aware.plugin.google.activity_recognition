@@ -15,7 +15,7 @@
         android:key="frequency_plugin_google_activity_recognition"
         android:persistent="true"
         android:summary="60 seconds"
-        android:title="How frequently to detect (in seconds)"
+        android:title="Activity recognition interval (in seconds)"
         android:inputType="numberDecimal" />
 
 </PreferenceScreen>
