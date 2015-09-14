@@ -59,16 +59,16 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 			boolean is_active = sharedPreferences.getBoolean(key, false);
 			Aware.setSetting( getApplicationContext(), key, is_active);
             if( is_active ) {
-                Aware.startPlugin(getApplicationContext(), getPackageName());
+                Aware.startPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
             } else {
-                Aware.stopPlugin(getApplicationContext(), getPackageName());
+                Aware.stopPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
             }
             status.setChecked(is_active);
 		}
 		if( preference.getKey().equals(FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) {
             Aware.setSetting( getApplicationContext(), key, sharedPreferences.getString(key, "60") );
             frequency.setSummary(Aware.getSetting(getApplicationContext(), FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION) + " seconds");
-            Aware.startPlugin(getApplicationContext(), getPackageName());
+            Aware.startPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
 		}
 
 	}	

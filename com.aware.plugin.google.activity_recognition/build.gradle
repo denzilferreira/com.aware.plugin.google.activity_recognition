@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.aware.plugin.google.activity_recognition"
         minSdkVersion 10
-        targetSdkVersion 22
-        versionCode 24
-        versionName "6.5"
+        targetSdkVersion 23
+        versionCode 25
+        versionName "6.6"
     }
 
     buildTypes {
@@ -22,8 +22,8 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:+'
-    compile 'com.google.android.gms:play-services:+'
-    compile 'com.android.support:cardview-v7:+'
-    compile 'com.awareframework:aware-core:+@aar'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.google.android.gms:play-services-location:7.8.0'
+    compile 'com.android.support:cardview-v7:23.0.1'
+    compile 'com.awareframework:aware-core:3.6@aar'
 }

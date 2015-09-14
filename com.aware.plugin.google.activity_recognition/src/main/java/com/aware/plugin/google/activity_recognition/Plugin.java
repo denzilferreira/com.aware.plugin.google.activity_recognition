@@ -25,7 +25,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	public static String EXTRA_ACTIVITY = "activity";
 	public static String EXTRA_CONFIDENCE = "confidence";
 
-	private static Intent gARIntent;
 	private static PendingIntent gARPending;
 	private static GoogleApiClient gARClient;
 
@@ -57,7 +56,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 			Aware.setSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
 		}
 
-		gARIntent = new Intent(this, com.aware.plugin.google.activity_recognition.Algorithm.class);
+		Intent gARIntent = new Intent(this, com.aware.plugin.google.activity_recognition.Algorithm.class);
 		gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         gARClient = new GoogleApiClient.Builder(this)
                 .addApi(ActivityRecognition.API)
