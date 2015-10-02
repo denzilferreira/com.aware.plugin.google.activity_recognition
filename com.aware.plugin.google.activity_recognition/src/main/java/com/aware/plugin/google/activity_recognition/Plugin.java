@@ -59,7 +59,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 		Intent gARIntent = new Intent(this, com.aware.plugin.google.activity_recognition.Algorithm.class);
 		gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         gARClient = new GoogleApiClient.Builder(this)
-                .addApi(ActivityRecognition.API)
+                .addApiIfAvailable(ActivityRecognition.API)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
@@ -68,6 +68,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 		if( Aware.getSetting(this, Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0 ) {
 			Aware.setSetting(this, Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
 		}
+
+		Aware.startPlugin(this, PACKAGE_NAME);
 	}
 
 	@Override
@@ -106,6 +108,9 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
 	@Override
 	public void onConnectionFailed(ConnectionResult connection_result) {
+		if( connection_result.getErrorCode() == ConnectionResult.API_UNAVAILABLE ) {
+			stopSelf();
+		}
 		Log.w(TAG,"Error connecting to Google's activity recognition services, will try again in 5 minutes");
 	}
 
