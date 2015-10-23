@@ -9,8 +9,8 @@ android {
         applicationId "com.aware.plugin.google.activity_recognition"
         minSdkVersion 10
         targetSdkVersion 23
-        versionCode 26
-        versionName "6.7"
+        versionCode 27
+        versionName "6.8"
     }
 
     buildTypes {
@@ -26,8 +26,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.google.android.gms:play-services-location:8.1.0'
-    compile 'com.android.support:cardview-v7:23.0.1'
-    compile 'com.awareframework:aware-core:3.6.4@aar'
+    compile 'com.android.support:cardview-v7:23.1.0'
+    compile 'com.awareframework:aware-core:+@aar'
 }

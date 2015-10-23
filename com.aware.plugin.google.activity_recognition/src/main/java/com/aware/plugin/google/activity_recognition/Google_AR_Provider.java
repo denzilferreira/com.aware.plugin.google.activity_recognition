@@ -61,7 +61,7 @@ public class Google_AR_Provider extends ContentProvider {
         public static final String ACTIVITIES = "activities";
     }
 
-    public static String DATABASE_NAME = Environment.getExternalStorageDirectory() + "/AWARE/" + "plugin_google_activity_recognition.db";
+    public static String DATABASE_NAME = "plugin_google_activity_recognition.db";
 
     public static final String[] DATABASE_TABLES = {
             "plugin_google_activity_recognition"

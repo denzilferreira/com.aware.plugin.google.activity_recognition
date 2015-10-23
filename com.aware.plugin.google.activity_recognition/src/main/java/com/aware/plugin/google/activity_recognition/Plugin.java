@@ -1,6 +1,7 @@
 
 package com.aware.plugin.google.activity_recognition;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
@@ -85,7 +86,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
                 ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(gARClient, Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending);
             }
 		}
-		return START_STICKY;
+		return super.onStartCommand(intent, flags, startId);
 	}
 
 	@Override
