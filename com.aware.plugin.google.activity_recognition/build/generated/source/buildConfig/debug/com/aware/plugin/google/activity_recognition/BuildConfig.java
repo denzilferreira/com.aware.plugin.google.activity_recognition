@@ -8,6 +8,6 @@ public final class BuildConfig {
   public static final String APPLICATION_ID = "com.aware.plugin.google.activity_recognition";
   public static final String BUILD_TYPE = "debug";
   public static final String FLAVOR = "";
-  public static final int VERSION_CODE = 27;
-  public static final String VERSION_NAME = "6.8";
+  public static final int VERSION_CODE = 28;
+  public static final String VERSION_NAME = "6.9";
 }
