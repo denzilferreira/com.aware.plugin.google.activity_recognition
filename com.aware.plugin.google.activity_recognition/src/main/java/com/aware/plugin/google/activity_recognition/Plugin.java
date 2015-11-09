@@ -1,12 +1,10 @@
 
 package com.aware.plugin.google.activity_recognition;
 
-import android.Manifest;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.util.Log;
 
 import com.aware.Aware;
@@ -26,7 +24,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	public static String EXTRA_ACTIVITY = "activity";
 	public static String EXTRA_CONFIDENCE = "confidence";
 
-	private static PendingIntent gARPending;
 	private static GoogleApiClient gARClient;
 
 	public static int current_activity = -1;
@@ -57,8 +54,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 			Aware.setSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
 		}
 
-		Intent gARIntent = new Intent(this, com.aware.plugin.google.activity_recognition.Algorithm.class);
-		gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		Intent gARIntent = new Intent(getApplicationContext(), com.aware.plugin.google.activity_recognition.Algorithm.class);
+		PendingIntent gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         gARClient = new GoogleApiClient.Builder(this)
                 .addApiIfAvailable(ActivityRecognition.API)
                 .addConnectionCallbacks(this)
@@ -75,8 +72,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		super.onStartCommand(intent, flags, startId);
-
 		DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
 
 		if ( ! is_google_services_available() ) {
@@ -85,6 +80,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 		} else {
 			gARClient.connect();
             if( gARClient.isConnected() ) {
+				Intent gARIntent = new Intent(getApplicationContext(), com.aware.plugin.google.activity_recognition.Algorithm.class);
+				PendingIntent gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(gARClient, Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending);
             }
 		}
@@ -99,6 +96,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
 		//we might get here if phone doesn't support Google Services
 		if ( gARClient != null && gARClient.isConnected() ) {
+			Intent gARIntent = new Intent(getApplicationContext(), com.aware.plugin.google.activity_recognition.Algorithm.class);
+			PendingIntent gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 			ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates( gARClient, gARPending );
 		}
 

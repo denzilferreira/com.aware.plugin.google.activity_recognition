@@ -44,6 +44,7 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
             Aware.setSetting(this, STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, true);
         }
 		status.setChecked(Aware.getSetting(getApplicationContext(), STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).equals("true"));
+
 		frequency = (EditTextPreference) findPreference(FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION);
         if( Aware.getSetting(this, FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0 ) {
             Aware.setSetting(this, FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
@@ -58,18 +59,16 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 		if( preference.getKey().equals(STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION) ) {
 			boolean is_active = sharedPreferences.getBoolean(key, false);
 			Aware.setSetting( getApplicationContext(), key, is_active);
-            if( is_active ) {
-                Aware.startPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
-            } else {
-                Aware.stopPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
-            }
             status.setChecked(is_active);
 		}
 		if( preference.getKey().equals(FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) {
             Aware.setSetting( getApplicationContext(), key, sharedPreferences.getString(key, "60") );
             frequency.setSummary(Aware.getSetting(getApplicationContext(), FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION) + " seconds");
-            Aware.startPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
 		}
-
+		if( status.isChecked() ) {
+			Aware.startPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
+		} else {
+			Aware.stopPlugin(getApplicationContext(), "com.aware.plugin.google.activity_recognition");
+		}
 	}	
 }
