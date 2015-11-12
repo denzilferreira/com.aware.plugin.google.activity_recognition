@@ -35,7 +35,7 @@ public class Google_AR_Provider extends ContentProvider {
     /**
      * Provider authority: com.aware.provider.plugin.google.activity_recognition
      */
-    public static String AUTHORITY = "com.aware.plugin.google.activity_recognition.provider";
+    public static String AUTHORITY = "com.aware.plugin.google.activity_recognition.provider.gar";
 
     private static final int GOOGLE_AR = 1;
     private static final int GOOGLE_AR_ID = 2;
@@ -166,7 +166,7 @@ public class Google_AR_Provider extends ContentProvider {
     @Override
     public boolean onCreate() {
         
-    	AUTHORITY = getContext().getPackageName() + ".provider";
+    	AUTHORITY = getContext().getPackageName() + ".provider.gar";
     	
     	sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         sUriMatcher.addURI(Google_AR_Provider.AUTHORITY, DATABASE_TABLES[0],
