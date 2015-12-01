@@ -56,7 +56,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
 		Intent gARIntent = new Intent(getApplicationContext(), com.aware.plugin.google.activity_recognition.Algorithm.class);
 		PendingIntent gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        gARClient = new GoogleApiClient.Builder(this)
+
+		gARClient = new GoogleApiClient.Builder(this)
                 .addApiIfAvailable(ActivityRecognition.API)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -78,8 +79,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 			Log.e(TAG,"Google Services activity recognition not available on this device.");
 			stopSelf();
 		} else {
-			gARClient.connect();
-            if( gARClient.isConnected() ) {
+			if( gARClient != null ) gARClient.connect();
+            if( gARClient != null && gARClient.isConnected() ) {
 				Intent gARIntent = new Intent(getApplicationContext(), com.aware.plugin.google.activity_recognition.Algorithm.class);
 				PendingIntent gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(gARClient, Long.valueOf(Aware.getSetting(getApplicationContext(), Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION)) * 1000, gARPending);
