@@ -2,18 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6d9ed9a288364688e7fcf6704776284dac1eb42e">
-        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-66919486815caec6d31dc628766078cb81067f66.jar" />
-    </item>
-    <item
         jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.3.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="77f9593d979f4347344be233bd0d888315f79517">
         <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-3221e452c71ed3949cc6cfbea7a0d6a746826b1c.jar" />
+    </item>
+    <item
+        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="345a1b5cf5b144ce18ba6962bc66a7e2f26c1c1b">
+        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-ac34c3b93d739de6243e20e182e211fe915d24e5.jar" />
+    </item>
+    <item
+        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-777ab2ad2e44de612f39e68cde2f319960135589.jar" />
+    </item>
+    <item
+        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.9.4/jars/libs/mqtt-client-0.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6">
+        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/mqtt-client-0.4.0-2c592f363a3cc720e2312a0c0ddb492c6e5f7d40.jar" />
+    </item>
+    <item
+        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-b5774bce7c2687e9db98106db6a43189a8c5bdb8.jar" />
     </item>
     <item
         jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
@@ -30,32 +51,18 @@
         <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-70909268f0da22e9fdb78cbbdbda74c8ad5f6c75.jar" />
     </item>
     <item
-        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.9.3/jars/classes.jar"
+        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.3.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="a3ac518946ce93030474d94be9bb76ae99bfcf4b">
-        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-282fcbc56b159588c11c52c7f4bebaaed7be7bfb.jar" />
+        sha1="6d9ed9a288364688e7fcf6704776284dac1eb42e">
+        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-66919486815caec6d31dc628766078cb81067f66.jar" />
     </item>
     <item
-        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.9.3/jars/libs/mqtt-client-0.4.0.jar"
+        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.9.4/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6">
-        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/mqtt-client-0.4.0-646e8a5e1b7a907268b37d237c0a84cb73b672dc.jar" />
-    </item>
-    <item
-        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-777ab2ad2e44de612f39e68cde2f319960135589.jar" />
-    </item>
-    <item
-        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="345a1b5cf5b144ce18ba6962bc66a7e2f26c1c1b">
-        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-ac34c3b93d739de6243e20e182e211fe915d24e5.jar" />
+        sha1="588d6b08ec0c1b457743d969f9790e0dc71423c5">
+        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-2f06fa7b98b2b1221a63e9fd51f2d0d22409a9d9.jar" />
     </item>
     <item
         jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
@@ -63,13 +70,6 @@
         revision="23.0.2"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
         <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/internal_impl-23.1.1-0624e677f466ab2775ecdcfc522dd0153ba8a2ca.jar" />
-    </item>
-    <item
-        jar="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/denzil/Android/com.aware.plugin.google.activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/release/classes-b5774bce7c2687e9db98106db6a43189a8c5bdb8.jar" />
     </item>
     <item
         jar="/Users/denzil/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
