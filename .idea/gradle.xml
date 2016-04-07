@@ -13,6 +13,12 @@
             <option value="$PROJECT_DIR$/com.aware.plugin.google.activity_recognition" />
           </set>
         </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/com.aware.plugin.google.activity_recognition" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
