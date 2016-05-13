@@ -35,6 +35,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
 		TAG = "AWARE::Google Activity Recognition";
 
+		Log.d(TAG, "onCreate");
+
 		DATABASE_TABLES = Google_AR_Provider.DATABASE_TABLES;
 		TABLES_FIELDS = Google_AR_Provider.TABLES_FIELDS;
 		CONTEXT_URIS = new Uri[]{ Google_Activity_Recognition_Data.CONTENT_URI };
@@ -74,6 +76,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
+
+		Log.d(TAG, "onStartCommand");
 
 		if ( ! is_google_services_available() ) {
 			Log.e(TAG,"Google Services activity recognition not available on this device.");
