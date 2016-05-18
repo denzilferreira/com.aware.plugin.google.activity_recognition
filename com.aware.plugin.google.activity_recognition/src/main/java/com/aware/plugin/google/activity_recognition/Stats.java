@@ -2,9 +2,14 @@ package com.aware.plugin.google.activity_recognition;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.util.Log;
 
 import com.aware.plugin.google.activity_recognition.Google_AR_Provider.Google_Activity_Recognition_Data;
 import com.google.android.gms.location.DetectedActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Stats {
 	
@@ -122,13 +127,23 @@ public class Stats {
 			long last_activity_timestamp = activity_raw.getLong(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.TIMESTAMP));
 			
 			while(activity_raw.moveToNext()) {
+
 				int activity = activity_raw.getInt(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.ACTIVITY_TYPE));
 				long activity_timestamp = activity_raw.getLong(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.TIMESTAMP));
-				
-				if( activity == DetectedActivity.WALKING && last_activity == DetectedActivity.WALKING ) { //continuing walking
-                    total_time_walking += activity_timestamp-last_activity_timestamp;
+
+				try {
+					JSONArray probable = new JSONArray( activity_raw.getString(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.ACTIVITIES)) );
+                    if (probable.length() >= 2) {
+                        JSONObject most_probable = (JSONObject) probable.get(1); //0 is on foot
+                        if (most_probable.getString("activity").equalsIgnoreCase("walking") && last_activity == DetectedActivity.ON_FOOT) {
+                            total_time_walking += activity_timestamp-last_activity_timestamp;
+                        }
+                    }
+
+				} catch (JSONException e) {
+					e.printStackTrace();
 				}
-				
+
 				last_activity = activity;
 				last_activity_timestamp = activity_timestamp;
 			}
@@ -158,8 +173,16 @@ public class Stats {
 				int activity = activity_raw.getInt(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.ACTIVITY_TYPE));
 				long activity_timestamp = activity_raw.getLong(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.TIMESTAMP));
 
-				if( activity == DetectedActivity.RUNNING && last_activity == DetectedActivity.RUNNING ) { //continuing running
-					total_time_running += activity_timestamp-last_activity_timestamp;
+				try {
+					JSONArray probable = new JSONArray( activity_raw.getString(activity_raw.getColumnIndex(Google_Activity_Recognition_Data.ACTIVITIES)) );
+                    if (probable.length() > 2) {
+                        JSONObject most_probable = (JSONObject) probable.get(1); //0 is on foot
+                        if (most_probable.getString("activity").equalsIgnoreCase("running") && last_activity == DetectedActivity.ON_FOOT) {
+                            total_time_running += activity_timestamp-last_activity_timestamp;
+                        }
+                    }
+				} catch (JSONException e) {
+					e.printStackTrace();
 				}
 
 				last_activity = activity;
