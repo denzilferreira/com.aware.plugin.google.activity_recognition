@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 
 version = version_readable
@@ -34,8 +33,6 @@ android {
     lintOptions {
         abortOnError false
     }
-    productFlavors {
-    }
 }
 
 
@@ -56,7 +53,7 @@ bintray {
         labels = ['aar','android','framework','aware']
         publicDownloadNumbers = true
         vcsUrl = 'https://github.com/denzilferreira/com.aware.plugin.google.activity_recognition.git' //EDIT ME
-        desc = "AWARE Plugin: Template" //EDIT ME
+        desc = "AWARE Plugin: Google Activity Recognition" //EDIT ME
         userOrg = user
         githubRepo = "denzilferreira/com.aware.plugin.google.activity_recognition" //EDIT ME
 
@@ -71,7 +68,7 @@ bintray {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile "com.google.android.gms:play-services-location:${google_libs}"
     compile "com.android.support:appcompat-v7:${support_libs}"
     compile "com.awareframework:aware-core:${aware_libs}@aar"
     compile "com.koushikdutta.ion:ion:2.1.6"
