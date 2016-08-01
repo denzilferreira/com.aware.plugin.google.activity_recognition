@@ -109,6 +109,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             gARClient.disconnect();
         }
         Aware.stopPlugin(this, PACKAGE_NAME);
+        Aware.stopAWARE();
     }
 
     private boolean is_google_services_available() {
