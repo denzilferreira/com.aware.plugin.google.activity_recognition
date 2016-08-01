@@ -1,5 +1,3 @@
 <resources>
-
-    <string name="app_name">Google Activity Recognition</string>
-
+    <string name="app_name">AWARE: Google Activity Recognition</string>
 </resources>

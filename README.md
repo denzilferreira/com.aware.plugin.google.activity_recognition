@@ -1,13 +1,14 @@
-AWARE Plugin: Google Activity Recognition
-===
+AWARE: Google Activity Recognition
+=========================================
 
-Plugin that uses Google Location APIs to capture users mode of transportation: still, walking, running, biking, in vehicle (car, bus).
+This plugin uses Google Location API's to capture users mode of transportation: still, walking, running, biking, in vehicle (car, bus).
 
 [ ![Download](https://api.bintray.com/packages/denzilferreira/com.awareframework/com.aware.plugin.google.activity_recognition/images/download.svg) ](https://bintray.com/denzilferreira/com.awareframework/com.aware.plugin.google.activity_recognition/_latestVersion)
 
 # Settings
-* **status_plugin_google_activity_recognition**: (boolean) activate/deactivate plugin
-* **frequency_plugin_google_activity_recognition**: (integer) How frequently to detect user's activity (in seconds)
+Parameters adjustable on the dashboard and client: 
+- **status_plugin_google_activity_recognition**: (boolean) activate/deactivate plugin
+- **frequency_plugin_google_activity_recognition**: (integer) How frequently to detect user's activity (in seconds)
 
 # Broadcasts
 **ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION**

@@ -14,6 +14,7 @@ import java.util.Calendar;
 /**
  * New Stream UI cards<br/>
  * Implement here what you see on your Plugin's UI.
+ *
  * @author denzilferreira
  */
 public class ContextCard implements IContextCard {
@@ -22,9 +23,10 @@ public class ContextCard implements IContextCard {
     private View card;
     private TextView still, walking, running, biking, driving;
 
-    public ContextCard(){}
+    public ContextCard() {
+    }
 
-	public View getContextCard(Context context) {
+    public View getContextCard(Context context) {
         Log.d("GAR", "viewing contextcard");
         //Load card information to memory
         LayoutInflater sInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -55,5 +57,5 @@ public class ContextCard implements IContextCard {
 
         //Return the card to AWARE/apps
         return card;
-	}
+    }
 }
