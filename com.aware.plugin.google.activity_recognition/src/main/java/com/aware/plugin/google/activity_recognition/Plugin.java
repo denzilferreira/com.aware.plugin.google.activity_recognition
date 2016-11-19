@@ -108,7 +108,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates(gARClient, gARPending);
             gARClient.disconnect();
         }
-        Aware.stopPlugin(this, PACKAGE_NAME);
         Aware.stopAWARE();
     }
 
