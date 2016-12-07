@@ -1,7 +1,6 @@
 package com.aware.plugin.google.activity_recognition;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -27,17 +26,16 @@ public class ContextCard implements IContextCard {
     }
 
     public View getContextCard(Context context) {
-        Log.d("GAR", "viewing contextcard");
         //Load card information to memory
         LayoutInflater sInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         card = sInflater.inflate(R.layout.layout, null);
 
         //Initialize UI elements from the card
-        still = (TextView) card.findViewById(R.id.time_still);
-        walking = (TextView) card.findViewById(R.id.time_walking);
-        biking = (TextView) card.findViewById(R.id.time_biking);
-        running = (TextView) card.findViewById(R.id.time_running);
-        driving = (TextView) card.findViewById(R.id.time_vehicle);
+        still = (TextView) card.findViewById(R.id.activity_idle);
+        walking = (TextView) card.findViewById(R.id.activity_walking);
+        biking = (TextView) card.findViewById(R.id.activity_biking);
+        running = (TextView) card.findViewById(R.id.activity_running);
+        driving = (TextView) card.findViewById(R.id.activity_vehicle);
 
         Calendar mCalendar = Calendar.getInstance();
         mCalendar.setTimeInMillis(System.currentTimeMillis());

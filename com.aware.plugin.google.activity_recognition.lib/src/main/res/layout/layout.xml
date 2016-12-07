@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/chart_physical_activity"
+    android:id="@+id/context_card_google_activity"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:orientation="horizontal" >
 
     <LinearLayout
-        android:id="@+id/activity_still"
+        android:id="@+id/activity_idle_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -21,7 +21,7 @@
             android:src="@drawable/ic_action_still" />
 
         <TextView
-            android:id="@+id/time_still"
+            android:id="@+id/activity_idle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/activity_walking"
+        android:id="@+id/activity_walking_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -54,12 +54,12 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView"
+                android:id="@+id/icon_running"
                 android:src="@drawable/ic_action_running" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/time_walking"
+            android:id="@+id/activity_walking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -72,14 +72,14 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="hh:mm"
-            android:id="@+id/time_running"
+            android:id="@+id/activity_running"
             android:layout_gravity="center_horizontal"
             android:textColor="#000" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/activity_biking"
+        android:id="@+id/activity_biking_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -93,7 +93,7 @@
             android:src="@drawable/ic_action_biking" />
 
         <TextView
-            android:id="@+id/time_biking"
+            android:id="@+id/activity_biking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -104,7 +104,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/activity_vehicle"
+        android:id="@+id/activity_vehicle_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -118,7 +118,7 @@
             android:src="@drawable/ic_action_vehicle" />
 
         <TextView
-            android:id="@+id/time_vehicle"
+            android:id="@+id/activity_vehicle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
