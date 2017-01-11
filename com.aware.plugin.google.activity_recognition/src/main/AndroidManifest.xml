@@ -12,6 +12,7 @@
 
         <service
             android:name="com.aware.plugin.google.activity_recognition.Algorithm"
+            android:label="AWARE: Google Activity Recognition API"
             android:exported="true" />
 
         <activity
@@ -27,7 +28,9 @@
 
         <service
             android:name="com.aware.plugin.google.activity_recognition.Plugin"
-            android:exported="true" />
+            android:exported="true"
+            android:label="AWARE: Google Activity Recognition"
+            />
 
     </application>
 
