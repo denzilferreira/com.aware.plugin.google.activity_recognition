@@ -30,7 +30,7 @@ import android.util.Log;
  */
 public class Google_AR_Provider extends ContentProvider {
 
-    public static final int DATABASE_VERSION = 5;
+    public static final int DATABASE_VERSION = 6;
 
     /**
      * Provider authority: com.aware.provider.plugin.google.activity_recognition
@@ -74,15 +74,13 @@ public class Google_AR_Provider extends ContentProvider {
             Google_Activity_Recognition_Data.ACTIVITY_NAME + " text default ''," +
             Google_Activity_Recognition_Data.ACTIVITY_TYPE + " integer default 0," +
             Google_Activity_Recognition_Data.CONFIDENCE + " integer default 0," +
-            Google_Activity_Recognition_Data.ACTIVITIES + " text default ''," +
-            "UNIQUE (" + Google_Activity_Recognition_Data.TIMESTAMP + "," + Google_Activity_Recognition_Data.DEVICE_ID + ")"
+            Google_Activity_Recognition_Data.ACTIVITIES + " text default ''"
     };
 
     private static UriMatcher sUriMatcher = null;
     private static HashMap<String, String> gARMap = null;
 
-
-    private static DatabaseHelper dbHelper;
+    private DatabaseHelper dbHelper;
     private static SQLiteDatabase database;
 
     private void initialiseDatabase() {
@@ -192,8 +190,6 @@ public class Google_AR_Provider extends ContentProvider {
                 Google_Activity_Recognition_Data.CONFIDENCE);
         gARMap.put(Google_Activity_Recognition_Data.ACTIVITIES,
                 Google_Activity_Recognition_Data.ACTIVITIES);
-
-        initialiseDatabase();
 
         return true;
     }
