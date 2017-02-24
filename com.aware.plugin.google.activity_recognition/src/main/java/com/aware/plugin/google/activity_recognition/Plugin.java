@@ -3,16 +3,13 @@ package com.aware.plugin.google.activity_recognition;
 
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.aware.Aware;
 import com.aware.Aware_Preferences;
 import com.aware.plugin.google.activity_recognition.Google_AR_Provider.Google_Activity_Recognition_Data;
-import com.aware.ui.PermissionsHandler;
 import com.aware.utils.Aware_Plugin;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -32,6 +29,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
     public static int current_activity = -1;
     public static int current_confidence = -1;
+
+    private Intent aware;
 
     @Override
     public void onCreate() {
@@ -67,7 +66,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
 
-        Aware.startAWARE(this);
+        aware = new Intent(this, Aware.class);
+        startService(aware);
     }
 
     @Override
@@ -97,7 +97,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates(gARClient, gARPending);
             gARClient.disconnect();
         }
-        Aware.stopAWARE(this);
+
+        stopService(aware);
     }
 
     private boolean is_google_services_available() {
