@@ -11,6 +11,7 @@ import com.aware.Aware;
 import com.aware.Aware_Preferences;
 import com.aware.plugin.google.activity_recognition.Google_AR_Provider.Google_Activity_Recognition_Data;
 import com.aware.utils.Aware_Plugin;
+import com.aware.utils.PluginsManager;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -29,8 +30,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
     public static int current_activity = -1;
     public static int current_confidence = -1;
-
-    private Intent aware;
 
     @Override
     public void onCreate() {
@@ -65,9 +64,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             Intent gARIntent = new Intent(getApplicationContext(), com.aware.plugin.google.activity_recognition.Algorithm.class);
             gARPending = PendingIntent.getService(getApplicationContext(), 0, gARIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
-
-        aware = new Intent(this, Aware.class);
-        startService(aware);
     }
 
     @Override
@@ -75,6 +71,9 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
         super.onStartCommand(intent, flags, startId);
 
         if (PERMISSIONS_OK) {
+
+            PluginsManager.enablePlugin(this, "com.ware.plugin.google.activity_recognition");
+
             DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
 
             Aware.setSetting(this, Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, true);
@@ -82,6 +81,8 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
                 Aware.setSetting(this, Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
             }
             if (gARClient != null && !gARClient.isConnected()) gARClient.connect();
+
+            Aware.startAWARE(this);
         }
 
         return START_STICKY;
@@ -98,7 +99,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             gARClient.disconnect();
         }
 
-        stopService(aware);
+        Aware.stopAWARE(this);
     }
 
     private boolean is_google_services_available() {
