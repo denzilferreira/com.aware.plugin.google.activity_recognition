@@ -11,7 +11,6 @@ import com.aware.Aware;
 import com.aware.Aware_Preferences;
 import com.aware.plugin.google.activity_recognition.Google_AR_Provider.Google_Activity_Recognition_Data;
 import com.aware.utils.Aware_Plugin;
-import com.aware.utils.PluginsManager;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -71,9 +70,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
         super.onStartCommand(intent, flags, startId);
 
         if (PERMISSIONS_OK) {
-
-            PluginsManager.enablePlugin(this, "com.ware.plugin.google.activity_recognition");
-
             DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
 
             Aware.setSetting(this, Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, true);
@@ -82,6 +78,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             }
             if (gARClient != null && !gARClient.isConnected()) gARClient.connect();
 
+            Aware.startPlugin(this, PACKAGE_NAME);
             Aware.startAWARE(this);
         }
 
