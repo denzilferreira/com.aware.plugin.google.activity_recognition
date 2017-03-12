@@ -30,7 +30,7 @@ import android.util.Log;
  */
 public class Google_AR_Provider extends ContentProvider {
 
-    public static final int DATABASE_VERSION = 5;
+    public static final int DATABASE_VERSION = 6;
 
     /**
      * Provider authority: com.aware.provider.plugin.google.activity_recognition
@@ -74,23 +74,20 @@ public class Google_AR_Provider extends ContentProvider {
             Google_Activity_Recognition_Data.ACTIVITY_NAME + " text default ''," +
             Google_Activity_Recognition_Data.ACTIVITY_TYPE + " integer default 0," +
             Google_Activity_Recognition_Data.CONFIDENCE + " integer default 0," +
-            Google_Activity_Recognition_Data.ACTIVITIES + " text default ''," +
-            "UNIQUE (" + Google_Activity_Recognition_Data.TIMESTAMP + "," + Google_Activity_Recognition_Data.DEVICE_ID + ")"
+            Google_Activity_Recognition_Data.ACTIVITIES + " text default ''"
     };
 
     private static UriMatcher sUriMatcher = null;
     private static HashMap<String, String> gARMap = null;
-    private static DatabaseHelper databaseHelper = null;
-    private static SQLiteDatabase database = null;
 
-    private boolean initializeDB() {
-        if (databaseHelper == null) {
-            databaseHelper = new DatabaseHelper( getContext(), DATABASE_NAME, null, DATABASE_VERSION, DATABASE_TABLES, TABLES_FIELDS );
-        }
-        if( databaseHelper != null && ( database == null || ! database.isOpen() )) {
-            database = databaseHelper.getWritableDatabase();
-        }
-        return( database != null && databaseHelper != null);
+    private DatabaseHelper dbHelper;
+    private static SQLiteDatabase database;
+
+    private void initialiseDatabase() {
+        if (dbHelper == null)
+            dbHelper = new DatabaseHelper(getContext(), DATABASE_NAME, null, DATABASE_VERSION, DATABASE_TABLES, TABLES_FIELDS);
+        if (database == null)
+            database = dbHelper.getWritableDatabase();
     }
     
     /**
@@ -98,21 +95,23 @@ public class Google_AR_Provider extends ContentProvider {
      */
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-    	if( ! initializeDB() ) {
-            Log.w(AUTHORITY,"Database unavailable...");
-            return 0;
-        }
+        initialiseDatabase();
 
-        int count = 0;
+        database.beginTransaction();
+
+        int count;
         switch (sUriMatcher.match(uri)) {
             case GOOGLE_AR:
                 count = database.delete(DATABASE_TABLES[0], selection,
                         selectionArgs);
                 break;
             default:
-
+                database.endTransaction();
                 throw new IllegalArgumentException("Unknown URI " + uri);
         }
+
+        database.setTransactionSuccessful();
+        database.endTransaction();
 
         getContext().getContentResolver().notifyChange(uri, null);
         return count;
@@ -135,18 +134,17 @@ public class Google_AR_Provider extends ContentProvider {
      */
     @Override
     public Uri insert(Uri uri, ContentValues initialValues) {
-    	if( ! initializeDB() ) {
-            Log.w(AUTHORITY,"Database unavailable...");
-            return null;
-        }
+        initialiseDatabase();
 
         ContentValues values = (initialValues != null) ? new ContentValues(
                 initialValues) : new ContentValues();
 
+        database.beginTransaction();
+
         switch (sUriMatcher.match(uri)) {
             case GOOGLE_AR:
-                long google_AR_id = database.insert(DATABASE_TABLES[0],
-                        Google_Activity_Recognition_Data.ACTIVITY_NAME, values);
+                long google_AR_id = database.insertWithOnConflict(DATABASE_TABLES[0],
+                        Google_Activity_Recognition_Data.ACTIVITY_NAME, values, SQLiteDatabase.CONFLICT_IGNORE);
 
                 if (google_AR_id > 0) {
                     Uri new_uri = ContentUris.withAppendedId(
@@ -154,11 +152,14 @@ public class Google_AR_Provider extends ContentProvider {
                             google_AR_id);
                     getContext().getContentResolver().notifyChange(new_uri,
                             null);
+                    database.setTransactionSuccessful();
+                    database.endTransaction();
                     return new_uri;
                 }
+                database.endTransaction();
                 throw new SQLException("Failed to insert row into " + uri);
             default:
-
+                database.endTransaction();
                 throw new IllegalArgumentException("Unknown URI " + uri);
         }
     }
@@ -189,7 +190,7 @@ public class Google_AR_Provider extends ContentProvider {
                 Google_Activity_Recognition_Data.CONFIDENCE);
         gARMap.put(Google_Activity_Recognition_Data.ACTIVITIES,
                 Google_Activity_Recognition_Data.ACTIVITIES);
-    	
+
         return true;
     }
 
@@ -200,10 +201,7 @@ public class Google_AR_Provider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder) {
         
-    	if( ! initializeDB() ) {
-            Log.w(AUTHORITY,"Database unavailable...");
-            return null;
-        }
+    	initialiseDatabase();
 
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
         switch (sUriMatcher.match(uri)) {
@@ -234,21 +232,23 @@ public class Google_AR_Provider extends ContentProvider {
     public int update(Uri uri, ContentValues values, String selection,
             String[] selectionArgs) {
         
-    	if( ! initializeDB() ) {
-            Log.w(AUTHORITY,"Database unavailable...");
-            return 0;
-        }
+    	initialiseDatabase();
+
+        database.beginTransaction();
     	
-        int count = 0;
+        int count;
         switch (sUriMatcher.match(uri)) {
             case GOOGLE_AR:
                 count = database.update(DATABASE_TABLES[0], values, selection,
                         selectionArgs);
                 break;
             default:
-
+                database.endTransaction();
                 throw new IllegalArgumentException("Unknown URI " + uri);
         }
+
+        database.setTransactionSuccessful();
+        database.endTransaction();
 
         getContext().getContentResolver().notifyChange(uri, null);
         return count;
