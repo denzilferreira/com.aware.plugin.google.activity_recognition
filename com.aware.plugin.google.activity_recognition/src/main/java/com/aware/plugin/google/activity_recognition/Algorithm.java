@@ -1,5 +1,5 @@
 /**
-@author: denzil
+ * @author: denzil
  */
 
 package com.aware.plugin.google.activity_recognition;
@@ -24,21 +24,21 @@ import com.google.android.gms.location.DetectedActivity;
 public class Algorithm extends IntentService {
 
     public Algorithm() {
-        super(Plugin.TAG);
+        super(Aware.TAG);
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
 
         if (ActivityRecognitionResult.hasResult(intent)) {
-            
+
             ActivityRecognitionResult result = ActivityRecognitionResult.extractResult(intent);
 
             DetectedActivity mostProbable = result.getMostProbableActivity();
-            
+
             JSONArray activities = new JSONArray();
             List<DetectedActivity> otherActivities = result.getProbableActivities();
-            for(DetectedActivity activity : otherActivities ) {
+            for (DetectedActivity activity : otherActivities) {
                 try {
                     JSONObject item = new JSONObject();
                     item.put("activity", getActivityName(activity.getType()));
@@ -63,14 +63,14 @@ public class Algorithm extends IntentService {
 
             getContentResolver().insert(Google_Activity_Recognition_Data.CONTENT_URI, data);
 
-            if ( Plugin.DEBUG ) {
-            	Log.d(Plugin.TAG, "User is: " + activity_name + " (conf:" + Plugin.current_confidence + ")");
+            if (Aware.DEBUG) {
+                Log.d(Aware.TAG, "User is: " + activity_name + " (conf:" + Plugin.current_confidence + ")");
             }
 
-            Intent context = new Intent( Plugin.ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION );
-            context.putExtra( Plugin.EXTRA_ACTIVITY, Plugin.current_activity );
-            context.putExtra( Plugin.EXTRA_CONFIDENCE, Plugin.current_confidence );
-            sendBroadcast( context );
+            Intent context = new Intent(Plugin.ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION);
+            context.putExtra(Plugin.EXTRA_ACTIVITY, Plugin.current_activity);
+            context.putExtra(Plugin.EXTRA_CONFIDENCE, Plugin.current_confidence);
+            sendBroadcast(context);
         }
     }
 
