@@ -78,7 +78,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             }
             if (gARClient != null && !gARClient.isConnected()) gARClient.connect();
 
-            Aware.startPlugin(this, PACKAGE_NAME);
             Aware.startAWARE(this);
         }
 
