@@ -2,6 +2,7 @@
 package com.aware.plugin.google.activity_recognition;
 
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -78,6 +79,17 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
             }
             if (gARClient != null && !gARClient.isConnected()) gARClient.connect();
 
+            if (!Aware.isSyncEnabled(this, Google_AR_Provider.getAuthority(this)) && Aware.isStudy(this) && getApplicationContext().getPackageName().equalsIgnoreCase("com.aware.phone") || getApplicationContext().getResources().getBoolean(R.bool.standalone)) {
+                ContentResolver.setIsSyncable(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), 1);
+                ContentResolver.setSyncAutomatically(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), true);
+                ContentResolver.addPeriodicSync(
+                        Aware.getAWAREAccount(this),
+                        Google_AR_Provider.getAuthority(this),
+                        Bundle.EMPTY,
+                        Long.parseLong(Aware.getSetting(this, Aware_Preferences.FREQUENCY_WEBSERVICE)) * 60
+                );
+            }
+
             Aware.startAWARE(this);
         }
 
@@ -87,6 +99,15 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
     @Override
     public void onDestroy() {
         super.onDestroy();
+
+        if (Aware.isStudy(this) && (getApplicationContext().getPackageName().equalsIgnoreCase("com.aware.phone") || getApplicationContext().getResources().getBoolean(R.bool.standalone))) {
+            ContentResolver.setSyncAutomatically(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), false);
+            ContentResolver.removePeriodicSync(
+                    Aware.getAWAREAccount(this),
+                    Google_AR_Provider.getAuthority(this),
+                    Bundle.EMPTY
+            );
+        }
 
         Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, false);
         //we might get here if phone doesn't support Google Services
