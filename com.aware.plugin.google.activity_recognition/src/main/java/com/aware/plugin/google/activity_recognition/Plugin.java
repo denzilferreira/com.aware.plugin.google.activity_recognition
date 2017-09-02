@@ -4,13 +4,11 @@ package com.aware.plugin.google.activity_recognition;
 import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.aware.Aware;
 import com.aware.Aware_Preferences;
-import com.aware.plugin.google.activity_recognition.Google_AR_Provider.Google_Activity_Recognition_Data;
 import com.aware.utils.Aware_Plugin;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -36,10 +34,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
         super.onCreate();
 
         TAG = "AWARE::Google Activity Recognition";
-
-        DATABASE_TABLES = Google_AR_Provider.DATABASE_TABLES;
-        TABLES_FIELDS = Google_AR_Provider.TABLES_FIELDS;
-        CONTEXT_URIS = new Uri[]{Google_Activity_Recognition_Data.CONTENT_URI};
 
         CONTEXT_PRODUCER = new ContextProducer() {
             @Override
