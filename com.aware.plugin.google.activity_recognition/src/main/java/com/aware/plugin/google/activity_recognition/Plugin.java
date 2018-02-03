@@ -17,8 +17,6 @@ import com.google.android.gms.location.ActivityRecognition;
 
 public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
-    private String PACKAGE_NAME = "com.aware.plugin.google.activity_recognition";
-
     public static String ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION = "ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION";
     public static String EXTRA_ACTIVITY = "activity";
     public static String EXTRA_CONFIDENCE = "confidence";
@@ -77,7 +75,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
             if (!Aware.isSyncEnabled(this, Google_AR_Provider.getAuthority(this)) && Aware.isStudy(this) && getApplicationContext().getPackageName().equalsIgnoreCase("com.aware.phone") || getApplicationContext().getResources().getBoolean(R.bool.standalone)) {
                 ContentResolver.setIsSyncable(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), 1);
-                //ContentResolver.setSyncAutomatically(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), true);
+                ContentResolver.setSyncAutomatically(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), true);
                 ContentResolver.addPeriodicSync(
                         Aware.getAWAREAccount(this),
                         Google_AR_Provider.getAuthority(this),
@@ -97,7 +95,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
         super.onDestroy();
 
         if (Aware.isStudy(this) && (getApplicationContext().getPackageName().equalsIgnoreCase("com.aware.phone") || getApplicationContext().getResources().getBoolean(R.bool.standalone))) {
-            //ContentResolver.setSyncAutomatically(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), false);
+            ContentResolver.setSyncAutomatically(Aware.getAWAREAccount(this), Google_AR_Provider.getAuthority(this), false);
             ContentResolver.removePeriodicSync(
                     Aware.getAWAREAccount(this),
                     Google_AR_Provider.getAuthority(this),
