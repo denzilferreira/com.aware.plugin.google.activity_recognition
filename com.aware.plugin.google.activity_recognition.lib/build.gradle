@@ -4,13 +4,12 @@ android {
     compileSdkVersion compile_sdk
     buildToolsVersion build_tools
     defaultConfig {
-//        applicationId "com.aware.plugin.google.activity_recognition"
         minSdkVersion minimum_sdk
         targetSdkVersion target_sdk
         versionCode version_code
         versionName version_readable
 
-        resValue "string", "provider_google_activity_recognition", applicationId + ".provider.gar"
+        resValue "string", "provider_google_activity_recognition", "com.aware.plugin.google.activity_recognition.provider.gar"
     }
     signingConfigs {
         release

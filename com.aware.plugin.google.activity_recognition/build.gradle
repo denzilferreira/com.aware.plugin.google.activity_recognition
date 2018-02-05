@@ -10,7 +10,7 @@ android {
         versionCode version_code
         versionName version_readable
 
-        resValue "string", "provider_google_activity_recognition", applicationId + ".provider.gar"
+        resValue "string", "provider_google_activity_recognition", android.defaultConfig.applicationId + ".provider.gar"
     }
     signingConfigs {
         release
