@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AWARE: Google Activity Recognition</string>
+    <string name="plugin_google_activity_recognition">Plugin: Google Activity Recognition</string>
 </resources>

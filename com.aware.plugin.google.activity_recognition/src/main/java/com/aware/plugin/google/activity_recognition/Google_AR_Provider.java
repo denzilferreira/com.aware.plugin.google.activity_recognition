@@ -4,23 +4,23 @@
 
 package com.aware.plugin.google.activity_recognition;
 
-import java.util.HashMap;
-
-import com.aware.*;
-import com.aware.utils.DatabaseHelper;
-
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.BaseColumns;
 import android.util.Log;
+
+import com.aware.Aware;
+import com.aware.utils.DatabaseHelper;
+
+import java.util.HashMap;
 
 /**
  * Google's Activity Recognition Context Provider. Stored in SDcard in
@@ -113,7 +113,7 @@ public class Google_AR_Provider extends ContentProvider {
         database.setTransactionSuccessful();
         database.endTransaction();
 
-        getContext().getContentResolver().notifyChange(uri, null);
+        getContext().getContentResolver().notifyChange(uri, null, false);
         return count;
     }
 
@@ -150,8 +150,7 @@ public class Google_AR_Provider extends ContentProvider {
                     Uri new_uri = ContentUris.withAppendedId(
                             Google_Activity_Recognition_Data.CONTENT_URI,
                             google_AR_id);
-                    getContext().getContentResolver().notifyChange(new_uri,
-                            null);
+                    getContext().getContentResolver().notifyChange(new_uri, null, false);
                     database.setTransactionSuccessful();
                     database.endTransaction();
                     return new_uri;
@@ -164,10 +163,19 @@ public class Google_AR_Provider extends ContentProvider {
         }
     }
 
+    /**
+     * Returns the provider authority that is dynamic
+     * @return
+     */
+    public static String getAuthority(Context context) {
+        AUTHORITY = context.getPackageName() + ".provider.gar";
+        return AUTHORITY;
+    }
+
     @Override
     public boolean onCreate() {
         
-    	AUTHORITY = getContext().getPackageName() + ".provider.gar";
+    	AUTHORITY = getContext().getPackageName()+".provider.gar";
     	
     	sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         sUriMatcher.addURI(Google_AR_Provider.AUTHORITY, DATABASE_TABLES[0],
@@ -250,7 +258,7 @@ public class Google_AR_Provider extends ContentProvider {
         database.setTransactionSuccessful();
         database.endTransaction();
 
-        getContext().getContentResolver().notifyChange(uri, null);
+        getContext().getContentResolver().notifyChange(uri, null, false);
         return count;
     }
 }

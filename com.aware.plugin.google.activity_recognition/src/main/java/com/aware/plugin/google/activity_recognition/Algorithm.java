@@ -4,12 +4,6 @@
 
 package com.aware.plugin.google.activity_recognition;
 
-import java.util.List;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.IntentService;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -20,6 +14,12 @@ import com.aware.Aware_Preferences;
 import com.aware.plugin.google.activity_recognition.Google_AR_Provider.Google_Activity_Recognition_Data;
 import com.google.android.gms.location.ActivityRecognitionResult;
 import com.google.android.gms.location.DetectedActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
 
 public class Algorithm extends IntentService {
 
@@ -65,6 +65,28 @@ public class Algorithm extends IntentService {
 
             if (Aware.DEBUG) {
                 Log.d(Aware.TAG, "User is: " + activity_name + " (conf:" + Plugin.current_confidence + ")");
+            }
+
+            Plugin.AWARESensorObserver sensorObserver = Plugin.getSensorObserver();
+            if (sensorObserver != null) {
+                switch (mostProbable.getType()) {
+                    case DetectedActivity.IN_VEHICLE:
+                        sensorObserver.isVehicle(mostProbable.getConfidence());
+                        break;
+                    case DetectedActivity.ON_BICYCLE:
+                        sensorObserver.isBycicle(mostProbable.getConfidence());
+                        break;
+                    case DetectedActivity.WALKING:
+                        sensorObserver.isWalking(mostProbable.getConfidence());
+                        break;
+                    case DetectedActivity.RUNNING:
+                        sensorObserver.isRunning(mostProbable.getConfidence());
+                        break;
+                    case DetectedActivity.STILL:
+                        sensorObserver.isStill(mostProbable.getConfidence());
+                        break;
+                }
+                sensorObserver.onActivityChanged(data);
             }
 
             Intent context = new Intent(Plugin.ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION);
