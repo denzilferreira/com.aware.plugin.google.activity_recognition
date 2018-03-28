@@ -1,9 +1,9 @@
 AWARE: Google Activity Recognition
 =========================================
 
-This plugin uses Google Location API's to capture users mode of transportation: still, walking, running, biking, in vehicle (car, bus).
+[![Release](https://jitpack.io/v/denzilferreira/com.aware.plugin.google.activity_recognition.svg)](https://jitpack.io/#denzilferreira/com.aware.plugin.google.activity_recognition)
 
-[ ![Download](https://api.bintray.com/packages/denzilferreira/com.awareframework/com.aware.plugin.google.activity_recognition/images/download.svg) ](https://bintray.com/denzilferreira/com.awareframework/com.aware.plugin.google.activity_recognition/_latestVersion)
+This plugin uses Google Location API's to capture users mode of transportation: still, walking, running, biking, in vehicle (car, bus).
 
 # Settings
 Parameters adjustable on the dashboard and client: 
