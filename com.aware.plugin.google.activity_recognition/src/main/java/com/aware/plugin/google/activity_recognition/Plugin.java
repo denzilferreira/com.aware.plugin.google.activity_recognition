@@ -172,5 +172,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
     public void onConnectionSuspended(int i) {
         if (DEBUG)
             Log.w(TAG, "Error connecting to Google's activity recognition services, will try again in 5 minutes");
+
     }
 }
