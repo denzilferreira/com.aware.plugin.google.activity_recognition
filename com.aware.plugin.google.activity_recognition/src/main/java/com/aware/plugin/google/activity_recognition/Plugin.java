@@ -120,7 +120,6 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
                 ContentResolver.requestSync(request);
             }
         }
-
         return START_STICKY;
     }
 
