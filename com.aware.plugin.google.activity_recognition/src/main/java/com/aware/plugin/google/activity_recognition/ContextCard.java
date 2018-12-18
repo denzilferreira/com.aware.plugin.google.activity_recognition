@@ -1,7 +1,6 @@
 package com.aware.plugin.google.activity_recognition;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -29,7 +28,7 @@ public class ContextCard implements IContextCard {
     public View getContextCard(Context context) {
         //Load card information to memory
         LayoutInflater sInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        card = sInflater.inflate(R.layout.layout, null);
+        card = sInflater.inflate(R.layout.layout_google_activity, null);
 
         //Initialize UI elements from the card
         still = (TextView) card.findViewById(R.id.activity_idle);
