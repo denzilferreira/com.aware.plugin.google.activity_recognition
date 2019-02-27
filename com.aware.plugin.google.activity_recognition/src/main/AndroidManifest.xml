@@ -16,6 +16,7 @@
 
         <activity
             android:name="com.aware.plugin.google.activity_recognition.Settings"
+            android:label="AWARE: Google Activity Recognition"
             android:exported="true" />
 
         <provider
