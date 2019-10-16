@@ -100,7 +100,15 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
         if (PERMISSIONS_OK) {
             DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
 
-            Aware.setSetting(this, Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, true);
+            if (Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0) {
+                Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, true);
+            } else {
+                if (Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).equalsIgnoreCase("false")) {
+                    Aware.stopPlugin(getApplicationContext(), getPackageName());
+                    return START_STICKY;
+                }
+            }
+
             if (Aware.getSetting(this, Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION).length() == 0) {
                 Aware.setSetting(this, Settings.FREQUENCY_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, 60);
             }
