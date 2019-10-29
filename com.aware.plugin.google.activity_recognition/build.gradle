@@ -39,7 +39,4 @@ android {
     }
 }
 
-dependencies {
-    implementation "com.google.android.gms:play-services-location:$google_libs"
-    api project(':aware-core')
-}
+apply from: '../dependencies.gradle'
